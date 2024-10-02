@@ -1,0 +1,19 @@
+.p {
+    background-color: lightpink;
+    font-family: verdana, "dajavu sans sans-serif", sans-serif;
+}
+
+.font-size {
+    font-size: 24px;
+}
+
+#second {
+    color: blue;
+    font-size: 36px;
+}
+
+#fourth {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
