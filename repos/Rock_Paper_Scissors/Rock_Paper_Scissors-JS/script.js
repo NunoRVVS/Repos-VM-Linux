@@ -48,15 +48,13 @@ function validateInput(option) {
 function checkWinner(humanSelection, computerSelection) {
     if(humanSelection === computerSelection) {
         return "Tie";
-    } 
-    else if(
+    } else if(
         (humanSelection == "rock" && computerSelection == "scissors") ||
         (humanSelection == "paper" && computerSelection == "rock") ||
         (humanSelection == "scissors" && computerSelection == "paper")
     ) { 
         return "Player";
-    } 
-    else{
+    } else{
         return "Computer";
     }
 }
@@ -76,7 +74,7 @@ function logRound(getHumanChoice, getComputerChoice, winner, round) {
     console.log("Round:",round);
     console.log("Player Chose:",getHumanChoice);
     console.log("Computer Chose:",getComputerChoice);
-    console.log(winner, "won the round");
+    console.log(winner,"won the round");
     console.log("------------------------------------");
 } 
 

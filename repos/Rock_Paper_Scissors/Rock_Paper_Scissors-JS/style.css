@@ -1,4 +1,21 @@
-#game_border {
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border:5px solid black;
     padding: 2px;
+}
+
+#title {
+    background-color: rgb(51, 30, 12);
+    color: blueviolet;
+}
+
+.btn-start {
+    background-color: aquamarine;
+    color:black;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
 }
