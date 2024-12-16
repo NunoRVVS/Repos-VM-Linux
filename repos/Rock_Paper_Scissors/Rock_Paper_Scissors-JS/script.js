@@ -10,6 +10,7 @@ function game() {
 function playRound() {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
+    console.log(computerSelection);
     const winner = checkWinner(humanSelection, computerSelection);
     winners.push(winner);
 }
@@ -17,27 +18,27 @@ function playRound() {
 function getHumanChoice() {
     let input = prompt("What will you choose: Rock, Paper or Scissors?");
     while(input == null) { 
-         input = prompt("What will you choose: Rock, Paper or Scissors?");
-    } 
+        input = prompt("What will you choose: Rock, Paper or Scissors?");
+    }; 
     input = input.toLowerCase();
     let check = validateInput(input);
     while (check == false) {
         input = prompt(
-            "You need to spell it exactly as: Rock or Paper or Scissors");
-        };
-        while (input == null) {
-        input = prompt("Type either: Rock or Paper or Scissors?"
+            "You need to spell it exactly as: Rock or Paper or Scissors"
         );
+        while (input == null) {
+        input = prompt("Type either: Rock or Paper or Scissors?");
+        }
         input = input.toLowerCase();
         check = validateInput(input);
     }
     return input;
 }
 
-
 function getComputerChoice() { 
-    options[Math.floor(Math.random() * options.length)];
+    return options[Math.floor(Math.random() * options.length)];
 }
+console.log(options[Math.floor(Math.random() * options.length)]);
 
 function validateInput(option) {
     return options.includes(option)
@@ -45,7 +46,7 @@ function validateInput(option) {
 
 
 function checkWinner(humanSelection, computerSelection) {
-    if(humanSelection == computerSelection) {
+    if(humanSelection === computerSelection) {
         return "Tie!";
     } 
     else if(
@@ -53,9 +54,9 @@ function checkWinner(humanSelection, computerSelection) {
         (humanSelection == "paper" && computerSelection == "rock") ||
         (humanSelection == "scissors" && computerSelection == "paper")
     ) { 
-        return "User";
+        return "Player";
     } 
-    else {
+    else{
         return "Computer";
     }
 }
@@ -73,16 +74,16 @@ function checkWinner(humanSelection, computerSelection) {
 //     }
 // }
 
-function logWins() {
-    console.log(winners);
-    let humanWins = winners.filter((item) => item == "User").length;
-    let computerWins = winners.filter((item) => item == "Computer").length;
-    let ties = winners.filter((item) => item == "Tie").length;
-    console.log("Results:");
-    console.log("Player Wins:", humanWins);
-    console.log("Computer Wins:", computerWins);
-    console.log("Ties:", ties);
-}
+// function logWins() {
+//     console.log(winners);
+//     let humanWins = winners.filter((item) => item == "User").length;
+//     let computerWins = winners.filter((item) => item == "Computer").length;
+//     let ties = winners.filter((item) => item == "Tie").length;
+//     console.log("Results:");
+//     console.log("Player Wins:", humanWins);
+//     console.log("Computer Wins:", computerWins);
+//     console.log("Ties:", ties);
+// }
 
 // function logRound(getHumanChoice, getComputerChoice, checkWinner){
 //     console.log("Round:",round)
@@ -92,4 +93,3 @@ function logWins() {
 // } 
 
 game();
-
