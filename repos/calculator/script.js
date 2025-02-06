@@ -1,43 +1,40 @@
-const subtract = function(a, b) {
-	return a - b;
-};
+// DOM elemnts
+const inputVal = document.getElementById('input');
+const expressionDiv = document.getElementById('expression');
+const resultDiv = document.getElementById('result');
 
-const sum = function(newArray) {
-	let total = 0;
-    for (let i = 0; i < newArray.length; i++) {
-        total += newArray[i];
-    }
-    return total;
+//Define expression and result variable
+let expression = '';
+let result = '';
+
+//Define event handler for BTN clicks
+
+function buttonClick(event) {
+    //get values from clicked btn
+    const target = event.target;
+    const action = target.dataset.action;
+    const value = target.dataset.value;
+
+    //SWITCH case to control calculator
 }
 
-const multiply = function(newArray) {
-	let result = 1;
-    for (let i = 0; i < newArray.length; i++) {
-        result *= newArray[i];
-    }
-    return result;
-}
+inputVal.addEventListener('click', buttonClick);
 
-console.log(result);
 
-// const power = function(a, p) {
-//   let result = Math.pow(a, p);
-//   for (let i = 0; i < 0; i++);
-//   if (p < 1) { 
-//     return 'ERROR';
-//   }
-//     return result;
-// };
-
-// const factorial = function(number) {
-//   if (number < 0) {
-//     return -1;
-//   } 
-//   else if (number == 0) {
-//     return 1;
-//   } 
-//   else {
-//       return (number * factorial(number - 1))
-// };
+// function appendToDisplay(val) { 
+//     document.getElementById("display").value += val;
 // }
 
+// function clearDisplay() {
+//     document.getElementById("display").value = "";
+// }
+
+// function deleteValue() {
+//     document.getElementById("display").value = document.getElementById("display").value(0, -1);
+// }
+
+// function calculate() {
+//     document.getElementById("display").value = [];
+//     let op = ["-","+","*","/"]
+
+// }

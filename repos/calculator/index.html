@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css"/>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="calculator">
-        <input id="display" placeholder="0" readonly/>
-        <div id="keys">
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('/')">/</button>
-            <button onclick="appendToDisplay('*')">*</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            <button onclick="appendToDisplay('=')">=</button>
-        </div>
+        <section id="output">
+            <input type="text" id="expression" placeholder="0" readonly />
+            <input type="text" id="result" placeholder="0" readonly />
+        </section>
+        <section id="input"> 
+            <div>
+                <button class="operator" data-action="clear" data-value="AC">AC</button>
+                <button class="operator" data-action="backspace" data-value="DEL">DEL</button>
+                <button class="operator" data-action="mod" data-value="%">%</button>
+                <button class="operator" data-action="division" data-value="/">/</button>
+            </div>
+            <div>
+                <button data-action="number" data-value="7">7</button>
+                <button data-action='number' data-value="8">8</button>
+                <button data-action="number" data-value="9">9</button>
+                <button class="operator" data-action="number" data-value="*">*</button>
+            </div>
+            <div> 
+                <button data-action="number" data-value="4">4</button>
+                <button data-action="number" data-value="5">5</button>
+                <button data-action="number" data-value="6">6</button>
+                <button class="operator" data-action="subtraction" data-value="-">-</button>
+            </div>
+            <div> 
+                <button data-action="number" data-value="1">1</button>
+                <button data-action="number" data-value="2">2</button>
+                <button data-action="number" data-value="3">3</button>
+                <button class="operator" data-action="addition" data-value="+">+</button>
+            </div>
+            <div> 
+                <button data-action="number" data-value="00">00</button>
+                <button data-action="number" data-value="0">0</button>
+                <button data-action="decimal" data-value=".">.</button>
+                <button id="equalBtn" data-action="submit" data-value="=">=</button>
+            </div>
+        </section>
     </div>
-    
-
     <script src="script.js" defer></script>
 </body>
 </html>
